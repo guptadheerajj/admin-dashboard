@@ -4,7 +4,8 @@
 	--bg-clr-input-srch: #d3d3d3;
 	--bg-clr-header: #d8bfd8;
 	--bg-clr-sidebar: #dda0dd;
-	--bg-clr-btm: #800080;
+	--bg-clr-btn: #800080;
+	--bg-clr-btn-hover: lightpink;
 
 	--clr-btn: #ffffff;
 	--clr-project: #6a0dad;
@@ -27,15 +28,12 @@ body {
 	min-height: 100svh;
 }
 
-header {
-	background-color: var(--bg-clr-header);
-	grid-area: header;
-}
+/* sidebar */
 
 aside {
 	background-color: var(--bg-clr-sidebar);
 	grid-area: sidebar;
-	font-size: .7rem;
+	font-size: 0.7rem;
 	padding: 1.4rem;
 	min-height: 100vh;
 }
@@ -70,6 +68,126 @@ aside > .side-row:first-child > img {
 	min-width: 40px;
 }
 
+.side-row > h2:hover {
+	text-decoration: underline;
+}
+
+/* header */
+
+header {
+	background-color: var(--bg-clr-header);
+	grid-area: header;
+	padding: 1rem 4rem;
+}
+
+header .icon {
+	width: 28px;
+}
+
+.header-grid-1, .header-grid-2, .search-part, .profile-part {
+	display: grid;
+	grid-auto-flow: column;
+	align-items: center;
+}
+
+.header-grid-1{
+	grid-template-columns: 1fr auto;
+	gap: clamp(0.625rem, 32.438vw - 20.176rem, 18.75rem);
+	margin-bottom: 20px;
+}
+
+.header-grid-2 {
+	justify-content: space-between;
+
+}
+
+.search-part {
+	grid-template-columns: auto 1fr;
+}
+
+.search-part, .profile-part  {
+	gap: 12px;
+	
+}
+
+.profile-part {
+	font-size: 18px;
+	font-weight: 300;
+}
+
+.profile-part > .profile-pic {
+	width: 34px;
+	border-radius: 50%;
+}
+
+.search-part > input {
+	border-radius: 16px;
+	border: 2px solid var(--brdr-clr-project);
+	background-color: var(--bg-clr-input-srch);
+	font-size: 16px;
+    padding: 4px 16px;
+	line-height: 16px;
+}
+
+.search-part > input:focus {
+	outline: none;
+	border: none;
+	border-bottom: 2px solid var(--bg-clr-btn);
+	border-right: 2px solid var(--bg-clr-btn);
+}
+
+.main-pfp {
+	display: grid;
+	grid-auto-flow: column;
+	align-items: center;
+	gap:8px;
+	font-weight: 600;
+	
+}
+
+.main-pfp > .greet > p {
+	font-size: 13px;
+	line-height: 12px;
+}
+
+.main-pfp > .greet > div {
+	font-size: 20px;
+	line-height: 26px;
+}
+
+.main-pfp > img {
+	border-radius: 50%;
+	min-width: 60px;
+	max-width: 60px;
+}
+
+nav {
+	display: grid;
+	grid-auto-flow: column;
+	gap: 16px;
+}
+
+nav .btn {
+	border-radius: 16px;
+	background-color: var(--bg-clr-btn);
+	color: var(--clr-btn);
+	border: none;
+	padding: 5px;
+	width: 80px;
+	font-size: 14px;
+	font-weight: 600;
+	border: 1px solid #333;
+}
+
+nav .btn:hover {
+	background-color: var(--bg-clr-btn-hover);
+	color: black;
+	border: 1px solid #333;
+}
+
+
+
+/* main */
 main {
 	background-color: var(--bg-clr-main);
 	grid-area: main;
