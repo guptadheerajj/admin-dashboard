@@ -1,0 +1,76 @@
+:root {
+	--bg-clr-project: #ffffff;
+	--bg-clr-main: #e6e6fa;
+	--bg-clr-input-srch: #d3d3d3;
+	--bg-clr-header: #d8bfd8;
+	--bg-clr-sidebar: #dda0dd;
+	--bg-clr-btm: #800080;
+
+	--clr-btn: #ffffff;
+	--clr-project: #6a0dad;
+	--clr-main-heading: #333333;
+	--clr-heading: #000000;
+
+	--brdr-clr-line-break: #eeeeee;
+	--brdr-clr-project: #800080;
+}
+
+body {
+	font-family: "Roboto", sans-serif;
+	display: grid;
+	grid-template-columns: minmax(220px, 1fr) 4fr;
+	grid-template-rows: auto 1fr;
+	grid-template-areas:
+		"sidebar header"
+		"sidebar main";
+	min-height: 100vh;
+	min-height: 100svh;
+}
+
+header {
+	background-color: var(--bg-clr-header);
+	grid-area: header;
+}
+
+aside {
+	background-color: var(--bg-clr-sidebar);
+	grid-area: sidebar;
+	font-size: .7rem;
+	padding: 1.4rem;
+	min-height: 100vh;
+}
+
+.side-row {
+	margin-bottom: 10px;
+	display: grid;
+	grid-auto-flow: column;
+	justify-content: start;
+	align-items: center;
+	gap: 16px;
+}
+
+aside > .side-row:nth-child(2) {
+	margin-top: 40px;
+}
+
+aside > .side-row:nth-last-child(3) {
+	margin-top: 80px;
+}
+
+aside > .side-row:first-child {
+	font-size: 1.1rem;
+	justify-self: start;
+}
+
+aside > .side-row > img {
+	width: 20px;
+}
+
+aside > .side-row:first-child > img {
+	min-width: 40px;
+}
+
+main {
+	background-color: var(--bg-clr-main);
+	grid-area: main;
+}
