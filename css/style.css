@@ -190,10 +190,11 @@ nav .btn:hover {
 main {
 	background-color: var(--bg-clr-main);
 	grid-area: main;
-	padding: 1rem 6rem 1rem 2rem ;
+	padding: 1rem 6rem 1rem 2rem;
 
 	display: grid;
 	grid-template-columns: 1fr 250px;
+	grid-auto-rows: auto 1fr;
 	column-gap: 2rem;
 }
 
@@ -202,7 +203,8 @@ main {
 }
 
 .projects > h2,
-.announcement > h2 {
+.announcement > h2,
+.trending > h2 {
 	color: var(--clr-main-heading);
 	font-size: 20px;
 }
@@ -215,11 +217,15 @@ main {
 }
 
 .projects .card,
-.announcement > .announce-card {
+ .announce-card , .trending-card{
 	background-color: var(--bg-clr-project);
 	border-radius: 10px;
 	padding: 24px;
-	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.projects .card:hover {
+	scale: 1.03;
 }
 
 .projects .card {
@@ -270,5 +276,23 @@ hr {
 }
 
 .trending {
-	grid-area: 2 / 3;
+	grid-row: 2 / 3;
+	color: var(--clr-project);
+}
+
+.trending > h2 {
+	margin: 1rem 0;
+}
+
+.trending  img {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+}
+
+.trending-row {
+	display: grid;
+	grid-auto-flow: column;
+	gap: 8px;
+	margin-bottom: 16px;
 }
