@@ -84,13 +84,16 @@ header .icon {
 	width: 28px;
 }
 
-.header-grid-1, .header-grid-2, .search-part, .profile-part {
+.header-grid-1,
+.header-grid-2,
+.search-part,
+.profile-part {
 	display: grid;
 	grid-auto-flow: column;
 	align-items: center;
 }
 
-.header-grid-1{
+.header-grid-1 {
 	grid-template-columns: 1fr auto;
 	gap: clamp(0.625rem, 32.438vw - 20.176rem, 18.75rem);
 	margin-bottom: 20px;
@@ -98,16 +101,15 @@ header .icon {
 
 .header-grid-2 {
 	justify-content: space-between;
-
 }
 
 .search-part {
 	grid-template-columns: auto 1fr;
 }
 
-.search-part, .profile-part  {
+.search-part,
+.profile-part {
 	gap: 12px;
-	
 }
 
 .profile-part {
@@ -125,7 +127,7 @@ header .icon {
 	border: 2px solid var(--brdr-clr-project);
 	background-color: var(--bg-clr-input-srch);
 	font-size: 16px;
-    padding: 4px 16px;
+	padding: 4px 16px;
 	line-height: 16px;
 }
 
@@ -140,9 +142,8 @@ header .icon {
 	display: grid;
 	grid-auto-flow: column;
 	align-items: center;
-	gap:8px;
+	gap: 8px;
 	font-weight: 600;
-	
 }
 
 .main-pfp > .greet > p {
@@ -176,19 +177,77 @@ nav .btn {
 	width: 80px;
 	font-size: 14px;
 	font-weight: 600;
-	border: 1px solid #333;
+	border: 2px solid #333;
 }
 
 nav .btn:hover {
 	background-color: var(--bg-clr-btn-hover);
 	color: black;
-	border: 1px solid #333;
+	border: 2px solid #333;
 }
-
-
 
 /* main */
 main {
 	background-color: var(--bg-clr-main);
 	grid-area: main;
+	padding: 1rem;
+
+	display: grid;
+	grid-template-columns: 1fr auto;
+}
+
+.projects {
+	grid-row: 1 / 3;
+}
+
+.projects > h2 {
+	color: var(--clr-main-heading);
+	font-size: 18px;
+}
+
+.card-container {
+	padding: 1rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 24px;
+}
+
+.projects .card {
+	background-color: var(--bg-clr-project);
+	border-radius: 10px;
+	border-left: 8px solid var(--brdr-clr-project);
+	padding: 24px;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.projects .card > h2 {
+	margin-bottom: 4px;
+	font-size: 18px;
+}
+
+.projects .card > p {
+	color: var(--clr-project);
+	font-size: 14px;
+	line-height: 1.4;
+}
+
+.project-nav {
+	margin-top: 16px;
+	display: grid;
+	grid-auto-flow: column;
+	justify-content: end;
+	gap: 24px;
+}
+
+.project-nav img:hover {
+	filter: invert(78%) sepia(50%) saturate(2227%) hue-rotate(360deg)
+		brightness(110%) contrast(104%);
+}
+
+.announcement {
+	grid-row: 1 / 2;
+}
+
+.trending {
+	grid-area: 2 / 3;
 }
